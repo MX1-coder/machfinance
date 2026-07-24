@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="63.5185" height="57.1358" viewBox="0 0 63.5185 57.1358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 6">
+<line id="Line 18" x1="2.00004" y1="30.6356" x2="62" y2="30.6356" stroke="#93AFBC" stroke-dasharray="2 2"/>
+<line id="Line 16" x1="1.27303" y1="48.449" x2="18.273" y2="30.449" stroke="#CB502A" stroke-width="2"/>
+<path id="Line 17" d="M17.8341 30.8895L36.4999 13.6355L63.5 13.1358" stroke="url(#paint0_linear_0_24)" stroke-width="2"/>
+<line id="Line 14" x1="0.500005" y1="5.13576" x2="0.500002" y2="57.1358" stroke="#134F69"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_24" x1="18.333" y1="31.5085" x2="46.333" y2="6.50851" gradientUnits="userSpaceOnUse">
+<stop offset="0.485677" stop-color="#52B88A"/>
+</linearGradient>
+</defs>
+</svg>
