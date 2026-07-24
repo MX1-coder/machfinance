@@ -1,0 +1,382 @@
+:root {
+  --brand-navy: #083a50;
+  --brand-navy-hover: #0b4863;
+  --brand-teal: #4a7e92;
+  --brand-teal-hover: #3f6c7e;
+  --brand-heading-teal: #134f69;
+  --brand-pill-bg: #e8eef1;
+  --brand-pill-bg-hover: #dde6ea;
+}
+
+body {
+  background-color: #f8fafc;
+}
+
+/* every checkbox/radio in the app uses the brand teal instead of Bootstrap's default blue */
+.form-check-input:checked {
+  background-color: var(--brand-teal);
+  border-color: var(--brand-teal);
+}
+.form-check-input:focus {
+  border-color: var(--brand-teal);
+  box-shadow: 0 0 0 0.25rem rgba(74, 126, 146, 0.25);
+}
+.form-check-input:indeterminate {
+  background-color: var(--brand-teal);
+  border-color: var(--brand-teal);
+}
+
+/* ---------- brand color utilities ---------- */
+
+.text-brand-navy { color: var(--brand-navy) !important; }
+.text-brand-teal { color: var(--brand-teal) !important; }
+.text-brand-heading { color: var(--brand-heading-teal) !important; }
+.bg-brand-navy { background-color: var(--brand-navy) !important; }
+.bg-brand-teal { background-color: var(--brand-teal) !important; }
+.border-brand-navy { border-color: var(--brand-navy) !important; }
+
+.btn-navy {
+  background-color: var(--brand-navy);
+  border-color: var(--brand-navy);
+  color: #fff;
+}
+.btn-navy:hover,
+.btn-navy:focus {
+  background-color: var(--brand-navy-hover);
+  border-color: var(--brand-navy-hover);
+  color: #fff;
+}
+
+.btn-outline-navy {
+  background-color: #fff;
+  border: 1px solid var(--brand-navy);
+  color: var(--brand-navy);
+}
+.btn-outline-navy:hover {
+  background-color: #f8fafc;
+  color: var(--brand-navy);
+}
+
+.btn-teal {
+  background-color: var(--brand-teal);
+  border-color: var(--brand-teal);
+  color: #fff;
+}
+.btn-teal:hover,
+.btn-teal:focus {
+  background-color: var(--brand-teal-hover);
+  border-color: var(--brand-teal-hover);
+  color: #fff;
+}
+
+.btn-heading {
+  background-color: var(--brand-heading-teal);
+  border-color: var(--brand-heading-teal);
+  color: #fff;
+}
+.btn-heading:hover,
+.btn-heading:focus {
+  background-color: var(--brand-heading-teal);
+  border-color: var(--brand-heading-teal);
+  color: #fff;
+}
+
+.link-navy {
+  color: var(--brand-navy);
+  text-decoration: none;
+  font-weight: 600;
+}
+.link-navy:hover { color: var(--brand-navy-hover); }
+
+/* ---------- generic layout helpers ---------- */
+
+.soft-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+}
+
+.soft-card-lg {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 1rem;
+}
+
+.two-tone-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+}
+.two-tone-footer {
+  background-color: #F7F9FB;
+}
+
+/* ---------- small UI atoms ---------- */
+
+.info-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #cbd5e1;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.stepper-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  background: none;
+  color: #94a3b8;
+  padding: 0;
+}
+.stepper-btn:hover { background-color: #f8fafc; color: #475569; }
+.stepper-value {
+  min-width: 2.5rem;
+  padding: 0 0.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+}
+.stepper-value.stepper-value-sm { min-width: 2rem; }
+
+.stepper.stepper-compact .stepper-btn { width: 1.25rem; height: 1.25rem; }
+.stepper.stepper-compact .stepper-value { min-width: 1.625rem; padding: 0 0.0625rem; font-size: 0.6875rem; }
+
+/* tighter table cell padding for dense card tables (overrides Bootstrap's
+   default 0.5rem left+right padding, which utility classes like pe-1 only
+   ever touched on one side) */
+.table-tight {
+  --bs-table-padding-x: 0.25rem;
+}
+.table-tight > :not(caption) > * > :first-child { padding-left: 0; }
+
+/* Legs grid: uses minmax(0, Nfr) tracks so the row can never exceed the
+   card's width — unlike a <table>, which always sizes to its content's
+   natural minimum first and only then overflows/scrolls if that doesn't fit. */
+.legs-grid {
+  display: grid;
+  grid-template-columns: 18px 24px minmax(0, 1.6fr) minmax(0, 1.3fr) minmax(0, 0.6fr) minmax(0, 1.1fr) minmax(0, 1fr) 16px 16px;
+  column-gap: 0.25rem;
+  align-items: center;
+}
+.legs-grid > * { min-width: 0; }
+.legs-grid-header {
+  background-color: #f1f5f9;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.375rem;
+}
+.legs-grid-row {
+  padding: 0.5rem 0.375rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 2.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background-color: #e2e8f0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+.toggle-switch.checked { background-color: var(--brand-navy); }
+.toggle-switch .toggle-knob {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+.toggle-switch.checked .toggle-knob { transform: translateX(1rem); }
+
+.pill-btn {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+.pill-btn:hover { border-color: #cbd5e1; color: #334155; }
+.pill-btn.active {
+  background-color: var(--brand-navy);
+  border-color: var(--brand-navy);
+  color: #fff;
+}
+.pill-btn.tone-muted {
+  background-color: var(--brand-pill-bg);
+  border: none;
+  color: #000;
+}
+.pill-btn.tone-muted:hover { background-color: var(--brand-pill-bg-hover); }
+.pill-btn.tone-muted.active {
+  background-color: var(--brand-teal);
+  color: #fff;
+}
+
+.tab-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1rem 1.25rem 0;
+}
+.tab-strip-item {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+.tab-strip-item:hover { color: #475569; }
+.tab-strip-item.active { color: var(--brand-navy); }
+.tab-strip-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 999px 999px 0 0;
+  background-color: var(--brand-navy);
+}
+
+.badge-side {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.badge-side-buy { background-color: #eff6ff; color: var(--brand-navy); }
+.badge-side-sell { background-color: #fef2f2; color: #dc2626; }
+.badge-nrml {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  background-color: #F2EDFD;
+  color: #9333ea;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+}
+
+.strategy-icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem 0.5rem;
+  background: #fff;
+  transition: all 0.15s ease;
+}
+.strategy-icon-card:hover { border-color: #cbd5e1; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); }
+
+.strategy-builder-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .strategy-builder-grid { grid-template-columns: 480px 1fr; }
+}
+
+.stats-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 576px) {
+  .stats-summary-grid { grid-template-columns: auto 1fr auto; }
+}
+.stats-summary-divider {
+  border-left: none;
+  padding-left: 0;
+}
+@media (min-width: 576px) {
+  .stats-summary-divider { border-left: 1px solid #f1f5f9; padding-left: 2rem; }
+}
+
+.history-entry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6875rem;
+}
+@media (min-width: 992px) {
+  .history-entry-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+.history-details-divider {
+  border-left: none;
+  padding-left: 0;
+}
+@media (min-width: 992px) {
+  .history-details-divider { border-left: 1px solid #f1f5f9; padding-left: 1.5rem; }
+}
+
+/* ---------- range slider ---------- */
+
+input[type="range"].slider-pill {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #e0e3e5;
+  border-radius: 12px;
+  outline: none;
+}
+
+input[type="range"].slider-pill::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 31px;
+  height: 15px;
+  margin-top: -6.5px;
+  border: 2px solid #ffffff;
+  border-radius: 9px;
+  background: var(--brand-teal);
+  box-shadow: 0px 2px 6.2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+
+input[type="range"].slider-pill::-moz-range-track {
+  height: 2px;
+  background: #e0e3e5;
+  border-radius: 12px;
+}
+
+input[type="range"].slider-pill::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 31px;
+  height: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 9px;
+  background: var(--brand-teal);
+  box-shadow: 0px 2px 6.2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
